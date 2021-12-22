@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="index.js"></script>
+</head>
+
+<body>
+<h1 style="text-align: center">Danh sách thành phố</h1>
+<input type="button" onclick="openFormCreate()" value="Thêm thành phố" class="btn btn-secondary">
+<table id="city-list" class="table table-striped table-hover"></table>
+
+<!--show city-->
+<div id="show_city"></div>
+
+<!--form tạo mới-->
+<form id="add-city" style="display: none">
+    <h1 style="text-align: center">Create City</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Tên thành phố:</th>
+            <td><label for="city"></label><input type="text" id="city" placeholder="City"></td>
+        </tr>
+        <tr>
+            <th>Quốc gia:</th>
+            <td>
+                <label for="national"></label><select id="national">
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Diện tích:</th>
+            <td><label for="area"></label><input type="text" id="area" placeholder="Area"></td>
+        </tr>
+        <tr>
+            <th>Dân số:</th>
+            <td><label for="population"></label><input type="text" id="population" placeholder="Population"></td>
+        </tr>
+        <tr>
+            <th>GDP:</th>
+            <td><label for="gdp"></label><input type="text" id="gdp" placeholder="GDP"></td>
+        </tr>
+        <tr>
+            <th>Giới thiệu:</th>
+            <td><label for="description"></label><input type="text" id="description" placeholder="Description"></td>
+        </tr>
+        <tr>
+            <td  class="d-flex justify-content-evenly " colspan="2"><input type="submit" value="Create" onclick="createNewCity()" class="btn btn-outline-secondary">
+                <input type="submit" value="Close" onclick="closeFormCreate()" class="btn btn-outline-secondary"></td>
+        </tr>
+    </table>
+</form>
+
+<!--form Edit-->
+<form id="edit-city" style="display: none">
+    <h1 style="text-align: center">Edit City</h1>
+    <table class="table table-striped table-hover">
+        <input type="hidden" name="idEdit" id="idEdit">
+        <tr>
+            <th>Tên thành phố:</th>
+            <td><label for="city"></label><input type="text" id="cityEdit" placeholder="City"></td>
+        </tr>
+        <tr>
+            <th>Quốc gia:</th>
+            <td>
+                <label for="national"></label><select id="nationalEdit">
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Diện tích:</th>
+            <td><label for="area"></label><input type="text" id="areaEdit" placeholder="Area"></td>
+        </tr>
+        <tr>
+            <th>Dân số:</th>
+            <td><label for="population"></label><input type="text" id="populationEdit" placeholder="Population"></td>
+        </tr>
+        <tr>
+            <th>GDP:</th>
+            <td><label for="gdp"></label><input type="text" id="gdpEdit" placeholder="GDP"></td>
+        </tr>
+        <tr>
+            <th>Giới thiệu:</th>
+            <td><label for="description"></label><input type="text" id="descriptionEdit" placeholder="Description"></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td class="d-flex justify-content-evenly"><input type="submit" value="Cập Nhập" onclick="editCity()" class="btn btn-outline-secondary">
+                <input type="submit" value="Close" onclick="closeFormEdit()" class="btn btn-outline-secondary"></td>
+        </tr>
+    </table>
+</form>
+
+<!--thông báo xóa-->
+<div id="delete_1">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true" style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Xóa thành phố</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Delete</h3>
+                    <p>Bạn có chắc chắn xóa thành phố không?</p>
+                </div>
+                <div class="modal-footer" id="show">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+</html>
